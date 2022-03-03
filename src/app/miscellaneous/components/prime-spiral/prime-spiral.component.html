@@ -1,15 +1,25 @@
 <h3>
 	Prime spiral (<a target="_blank" href="https://en.wikipedia.org/wiki/Ulam_spiral">Wikipedia</a>)
 </h3>
-<p>The Ulam spiral or prime spiral is a graphical depiction of the set of prime numbers, devised by mathematician Stanisław Ulam in 1963 and popularized in Martin Gardner's Mathematical Games column in Scientific American a short time later.[1] It is constructed by writing the positive integers in a square spiral and specially marking the prime numbers.</p>
-<button mat-raised-button (click)="drawingMode = 'dotted-line'; computeAndDraw()">
-	Show dotted lines
-</button>
-<button mat-raised-button (click)="drawingMode = 'squares'; computeAndDraw()">Show squares</button>
-<mat-form-field>
-  <label>Max number</label>
-  <input matInput max="677" type="number" [(ngModel)]="maxNumber" />
-</mat-form-field>
+<p>The Ulam spiral or prime spiral is a graphical depiction of the set of prime numbers, devised by mathematician Stanisław Ulam in 1963 and popularized in Martin Gardner's Mathematical Games column in Scientific American a short time later. It is constructed by writing the positive integers in a square spiral and specially marking the prime numbers.</p>
+<div class="d-flex gap-1">
+
+
+	<mat-form-field>
+		<label>Max number</label>
+		<input matInput (input)="computeAndDraw()" max="677" type="number" [(ngModel)]="maxNumber" />
+	</mat-form-field>
+
+	<div class="btn-group d-flex items-center gap-1">
+			<button mat-raised-button (click)="drawingMode = 'dotted-line'; computeAndDraw()">
+				Show dotted lines
+			</button>
+			<button mat-raised-button (click)="drawingMode = 'squares'; computeAndDraw()">Show squares</button>
+	</div>
+	<mat-form-field >
+		<input matInput (input)="computeAndDraw()" [(ngModel)]="drawColor" type="color" />
+	</mat-form-field>
+</div>
 
 <div class="prime-spiral-wrap">
 	<svg

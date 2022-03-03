@@ -13,6 +13,7 @@ import { SideNavService } from '../../../shared/components/sidenav/sidenav.servi
 	/// template: ``,
 })
 export class PrimeSpiralComponent implements AfterViewInit {
+	
 	maxNumber = 500;
 	@ViewChild('mainPath') mainPath: ElementRef;
 	constructor(private readonly sideNavService: SideNavService) {}
