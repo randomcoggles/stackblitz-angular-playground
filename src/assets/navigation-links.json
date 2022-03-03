@@ -1,0 +1,221 @@
+[
+  {
+    "title": "Highlights",
+    "url": "home",
+    "icon": "highlight",
+    "iconUrl": "",
+    "places": ["top-nav"],
+    "children": [
+      {
+        "title": "Register",
+        "url": "register",
+        "icon": "person",
+        "iconUrl": "",
+        "places": ["top-nav"]
+      },
+      {
+        "title": "Register 02",
+        "url": "register",
+        "icon": "person",
+        "iconUrl": "",
+        "places": ["top-nav"]
+      }
+    ]
+  },
+  {
+    "title": "Register",
+    "url": "register",
+    "icon": "person",
+    "iconUrl": "",
+    "places": ["top-nav"]
+  },
+  {
+    "title": "Charts",
+    "url": "charts",
+    "icon": "show_chart",
+    "iconUrl": "",
+    "places": ["top-nav"]
+  },
+  {
+    "title": "Planner",
+    "url": "planner",
+    "icon": "calendar_today",
+    "iconUrl": "",
+    "places": ["top-nav"]
+  },
+  {
+    "title": "Contact",
+    "url": "contact",
+    "icon": "scatter_plot",
+    "iconUrl": "",
+    "places": ["top-nav"]
+  },
+  {
+    "title": "Under construction",
+    "url": "under-construction",
+    "icon": "build",
+    "iconUrl": "",
+    "places": ["top-nav"]
+  },
+  {
+    "title": "Highlights",
+    "icon": "highlight",
+    "url": "home",
+    "places": ["/side-nav/gi"]
+  },
+  {
+    "title": "PO's bonuses",
+    "icon": "attach_money",
+    "url": "contact",
+    "permissions": ["po"],
+    "places": ["side-nav"]
+  },
+  {
+    "title": "developer's bonuses",
+    "icon": "attach_money",
+    "url": "contact",
+    "permissions": ["dev"],
+    "places": ["side-nav"]
+  },
+  {
+    "title": "QA engineer's bonuses",
+    "icon": "attach_money",
+    "url": "contact",
+    "permissions": ["qa"],
+    "places": ["side-nav"]
+  },
+  {
+    "title": "Interactive charts",
+    "icon": "mouse",
+    "url": "charts",
+    "productName": "interactive charts",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "New Sprint",
+    "icon": "add",
+    "url": "new-sprint",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "Calendar",
+    "icon": "calendar_today",
+    "url": "calendar",
+    "productName": "calendar",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "Planner",
+    "icon": "calendar_today",
+    "url": "planner",
+    "productName": "planner",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "Current Sprint",
+    "icon": "calendar",
+    "url": "sprints",
+    "productName": "sprints",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "Sprint timelines",
+    "icon": "timeline",
+    "url": "sprint-timelines",
+    "productName": "sprint timeline",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "Register",
+    "icon": "person",
+    "url": "register",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "Under construction",
+    "icon": "build",
+    "url": "under-construction",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "outlets",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "side-overlay-panel",
+    "url": [
+      {
+        "outlets": {
+          "side-overlay-panel": ["overlay"]
+        }
+      }
+    ],
+    "places": ["side-nav"]
+  },
+  {
+    "title": "side-overlay-panel - register",
+    "url": [
+      {
+        "outlets": {
+          "side-overlay-panel": ["register"]
+        }
+      }
+    ],
+    "places": ["side-nav"]
+  },
+  {
+    "title": "Highlights",
+    "url": "home",
+    "icon": "highlight",
+    "iconUrl": "",
+    "places": ["mobile-footer"]
+  },
+  {
+    "title": "Register",
+    "url": "register",
+    "icon": "person",
+    "iconUrl": "",
+    "places": ["mobile-footer"]
+  },
+  {
+    "title": "Charts",
+    "url": "charts",
+    "icon": "show_chart",
+    "iconUrl": "",
+    "places": ["mobile-footer"]
+  },
+  {
+    "title": "Planner",
+    "url": "planner",
+    "icon": "calendar_today",
+    "iconUrl": "",
+    "places": ["mobile-footer"]
+  },
+  {
+    "title": "Contact",
+    "url": "contact",
+    "icon": "scatter_plot",
+    "iconUrl": "",
+    "places": ["mobile-footer"]
+  },
+  {
+    "title": "",
+    "url": "under-construction",
+    "icon": "",
+    "iconUrl": "",
+    "places": ["mobile-footer"]
+  },
+  {
+    "title": "Sequence Diagram",
+    "url": "sequence-diagram",
+    "icon": "tune",
+    "places": ["side-nav"]
+  },
+  {
+    "title": "Test Function",
+    "url": "not-found",
+    "icon": "tune",
+    "func": "testFunction",
+    "places": ["side-nav"]
+  }
+]

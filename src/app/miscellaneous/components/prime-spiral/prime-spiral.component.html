@@ -1,0 +1,25 @@
+<h3>
+	Prime spiral (<a target="_blank" href="https://en.wikipedia.org/wiki/Ulam_spiral">Wikipedia</a>)
+</h3>
+<p>The Ulam spiral or prime spiral is a graphical depiction of the set of prime numbers, devised by mathematician Stanisław Ulam in 1963 and popularized in Martin Gardner's Mathematical Games column in Scientific American a short time later.[1] It is constructed by writing the positive integers in a square spiral and specially marking the prime numbers.</p>
+<button mat-raised-button (click)="drawingMode = 'dotted-line'; computeAndDraw()">
+	Show dotted lines
+</button>
+<button mat-raised-button (click)="drawingMode = 'squares'; computeAndDraw()">Show squares</button>
+<mat-form-field>
+  <label>Max number</label>
+  <input matInput max="677" type="number" [(ngModel)]="maxNumber" />
+</mat-form-field>
+
+<div class="prime-spiral-wrap">
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+		viewBox="-1 -1 1000 1000"
+	>
+		<path #mainPath id="" d="main-path" fill="none" stroke="green" d=""></path>
+		<g id="circle-group"></g>
+	</svg>
+</div>
+
+

@@ -1,0 +1,22 @@
+<h2 class="flex center">Intl Features</h2>
+<div class="flex center langs">
+  <!-- <button mat-raised-button (click)="showMessage('en')">English</button>
+  <button mat-raised-button (click)="showMessage('pt')">Portuguese</button>
+  <button mat-raised-button (click)="showMessage('fr')">French</button>
+  <button mat-raised-button (click)="showMessage('es')">Spanish</button> -->
+
+  <mat-radio-group class="flex center" aria-label="Select an option">
+    <mat-radio-button value="en"  (click)="showMessage('en')">English </mat-radio-button>
+    <mat-radio-button value="pt" (click)="showMessage('pt')">Portuguese</mat-radio-button>
+    <mat-radio-button value="fr" (click)="showMessage('fr')">French</mat-radio-button>
+    <mat-radio-button value="es" (click)="showMessage('es')">Spanish</mat-radio-button>
+  </mat-radio-group>
+
+</div>
+<h3>Days and week:</h3>  
+<pre [innerHTML]="daysAndWeek"></pre>
+
+<h3>List format:</h3>  
+<pre [innerHTML]="listFormat"></pre>
+
+

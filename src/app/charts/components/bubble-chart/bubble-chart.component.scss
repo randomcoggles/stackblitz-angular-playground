@@ -1,0 +1,120 @@
+.flex-row {
+	display: flex;
+}
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-col-md {
+  @media (max-width: 12450px) {
+    display: flex;
+    flex-direction: column;    
+  }
+}
+.flex-1 {
+	flex: 1;
+}
+.chart-container {
+  display: flex;
+}
+
+:host ::ng-deep {
+	.tick text,
+	[ngx-charts-axis-label] text {
+		font-family: "Poiret one";
+	}
+	g.circle {
+		circle {
+			opacity: 0.6;
+        &.selection-helper {
+        display: none;
+      }
+		}
+    &.selected {
+      circle {
+        &.selection-helper {
+          display: unset;
+        }
+        stroke: #fdfdfd;
+        fill: #00b2a9 !important;
+        &.selection-helper {
+          stroke: #00b2a9 !important;
+          fill: #fff !important;
+          display: unset !important;
+        }
+      }
+    }
+    &:hover {
+      animation: pulse 1.5s infinite;
+      circle {
+        stroke: #fdfdfd;
+        &.selection-helper {
+          fill: #fff !important;
+          display: unset !important;
+        }
+      }
+    }
+
+  }
+	g.circle
+	.py-3 {
+		padding: 1em;
+	}
+}
+
+.btn-remove-item {
+	color: red;
+	font-weight: bold;
+	/* border: solid red 1px; */
+	padding: 5px;
+	display: inline-block;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	line-height: 10px;
+	text-shadow: 1px 1px #000;
+	font-size: 23px;
+	cursor: pointer;
+	&:hover {
+		transform: scale(1.3);
+	}
+}
+.selection-totals {
+	cursor: pointer;
+	margin: 0;
+	font-weight: bold;
+	font-size: 15px;
+	&:before {
+		width: 0px;
+		height: 0px;
+		border: solid #008000 5px;
+		content: "";
+		border-right-color: black;
+		display: inline-block;
+		margin-left: -17px;
+		margin-right: 5px;
+	}
+}
+
+.selected-buble-item {
+	font-size: 14px;
+	padding: 0;
+	margin: 1px;
+	&:hover {
+		background-color: cyan;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1.1);
+	}
+
+	50% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1.1);
+	}
+}

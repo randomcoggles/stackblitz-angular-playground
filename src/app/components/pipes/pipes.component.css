@@ -1,0 +1,26 @@
+.number-val {
+  padding: 0 16px;
+}
+.pipe-result {
+  padding: 0 16px;
+  text-align: center;
+}
+.pipe-result-wrap {
+    color: #6a6868;
+    border-radius: 4px;
+    padding: 0 16px;
+}
+code {
+  background-color: #fffaf0;
+  padding: 4px;
+  border-radius: 4px;
+  margin: 4px;
+  display: inline-block;
+  box-shadow: 0px 0px 3px #c1c2c3;
+  border: solid 1px #c1c2c3;
+}
+
+h4{
+  padding-bottom: 0;
+  margin-bottom: 8px;
+}

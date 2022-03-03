@@ -1,0 +1,110 @@
+<router-outlet></router-outlet>
+
+<div class="flex-row chart-wrap flex-col">
+    <div class="chart-container">
+        <ngx-charts-bubble-chart class="flex-1" #myChart [view]="view" [scheme]="colorScheme" [results]="bubbleData" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [xScaleMin]="xScaleMin" [xScaleMax]="xScaleMax" [yScaleMin]="yScaleMin" [yScaleMax]="yScaleMax" [maxRadius]="25" [xAxisTicks]="[0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]" [yAxisTicks]="[0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]" (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)" (click)="onClik($event)" (hover)="hover($event, data2)" [update$]="update$">
+
+            <ng-template #tooltipTemplate let-model="model" class="tooltip" data="model.x">
+                <div class="py-3">
+                    r:{{model.r}} || x:{{model.x}} || y:{{model.y}}
+                    <br/>
+                    <span>Item selecionado</span>
+
+                </div>
+            </ng-template>
+        </ngx-charts-bubble-chart>
+        <div style="display: block">
+
+            <div class="chart-controls flex-row">
+                <div class="slide-lables">
+                    <div>
+                        Value interval($):
+                        <span class="lock">
+          <img 
+          (click)="dimensionSliderLocked = !dimensionSliderLocked"
+          *ngIf="dimensionSliderLocked" src="https://emoji.fileformat.info/gemoji/lock.png" alt="Gemoji image for :lock" style="width:24px;height:24px;">    
+
+          <img 
+          (click)="dimensionSliderLocked = !dimensionSliderLocked"
+          *ngIf="!dimensionSliderLocked" src="https://emoji.fileformat.info/gemoji/unlock.png" alt="Gemoji image for :unlock" style="width:24x;height:24px;">  
+        </span>
+                        <!-- <span class="lock">
+          <span style="font-size:16px;">🔓</span>
+          <span style="font-size:16px;">🔒</span>
+        </span> -->
+
+                        {{neighboorRadiusY}}:
+                    </div>
+                    <div>Score interval($):
+                        <span class="lock">
+          <img 
+          (click)="dimensionSliderLocked = !dimensionSliderLocked"
+          *ngIf="dimensionSliderLocked" 
+          (change)="scoreChange()"
+          src="https://emoji.fileformat.info/gemoji/lock.png" alt="Gemoji image for :lock" style="width:24px;height:24px;">    
+
+          <img 
+          (click)="dimensionSliderLocked = !dimensionSliderLocked"
+          *ngIf="!dimensionSliderLocked" src="https://emoji.fileformat.info/gemoji/unlock.png" alt="Gemoji image for :unlock" style="width:24x;height:24px;">  
+        </span> &nbsp;&nbsp;{{neighboorRadiusX}}:
+
+                    </div>
+                </div>
+                <div>
+                    <input style="width: 400px" type="range" min="1" id="radius" [(ngModel)]="neighboorRadiusY" (change)="radiusChange(radius, neighboorRadiusY)" name="valueY" min="1" max="5000">
+                    <br>
+
+                    <input style="width: 400px" type="range" min="1" id="neighboorRadiusX" [(ngModel)]="neighboorRadiusX" (change)="radiusChange(radius, neighboorRadiusX)" name="valueY" min="1" max="500">
+                </div>
+            </div>
+        </div>
+        <p>
+            <label for="radius">Change grouping interval: {{radius}}</label>
+            <input style="width: 400px" type="range" min="1" id="radius" [(ngModel)]="radius" (change)="radiusChange(radius)" name="vol" min="1" max="100">
+            <button (click)="justRefresh()">justRefresh</button>
+
+        </p>
+        <p>Total items {{reserved[0].series.length}}, Number of groups: {{bubbleData[0].series.length }} </p>
+        <p>bubbleData[0].series -> {{bubbleData[0].series.length }}
+            <- Dimensões: Valor(R$), Score, Probabilidade, Número CPF 's</p> 
+    </div> 
+  <div class="side-panel">
+					<div class="tool-box">
+					</div>
+
+					<div *ngIf="CPFCount || selectedAmmout">
+
+						<p title="Totais de suas seleções" class="selection-totals">Totais: {{CPFCount}} CPF's, R$ {{selectedAmmout}}</p>
+
+                <p class="selected-buble-item" *ngFor="let selection of selections | keyvalue">
+                    <!--  ...<span title="Remover esta seleção" class="btn-remove-item" (click)="removeSelectedItem(selection.key)">×</span> -->
+                    {{selection.value.r}} CPF's - {{selection.value.x/10}}% | R${{selection.value.y}}
+                </p>
+
+    </div>
+
+</div>
+</div>
+
+<h3>My chart 02</h3>
+
+<ngx-charts-bubble-chart #myChart2 *ngIf="false" [view]="view" [scheme]="colorScheme" [results]="bubbleData2" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [xScaleMin]="xScaleMin" [xScaleMax]="xScaleMax" [yScaleMin]="yScaleMin" [yScaleMax]="yScaleMax" [maxRadius]="15" [xAxisTicks]="[0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]" [yAxisTicks]="[0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]" (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)" (click)="onClik($event)" (hover)="hover($event, data2)">
+    <ng-template #nodeTemplate let-model="model" class="tooltip" data="model.x">
+        {{model | json}}
+    </ng-template>
+    <ng-template #seriesTooltipTemplate let-model="model">
+        {{model | json }}
+    </ng-template>
+
+    <ng-template #tooltipTemplate let-model="model" class="tooltip" data="model.x">
+        <div class="py-3">
+
+            {{model.r}} CPF's - {{model.probability}}% | R${{model.y}}
+            <br/>
+            <span>Item selecionado</span>
+
+        </div>
+    </ng-template>
+</ngx-charts-bubble-chart>
+
+<button (click)="setColor()">Set Color</button>

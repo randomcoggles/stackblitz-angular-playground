@@ -1,0 +1,208 @@
+<div><a href="javascript:void(0)" onclick="history.back()">Back</a></div>
+<h3 class="center">Angular Pipes</h3>
+<h4>&#9733; Floor pipe(custom): </h4>
+<table>
+  <tr>
+    <th colspan="1">Value</th>
+    <th></th>
+    <th>Result</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td class="number-val"><span>10.90</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{10.90 | floor}}</span></td>
+    <td><code><span ngNonBindable>{{10.90 | floor}}</span></code></td>
+  </tr>
+  <tr>
+    <td class="number-val"><span >05.11</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{05.11 | floor}}</span></td>
+    <td><code><span ngNonBindable>{{05.11 | floor}}</span></code></td>
+  </tr>
+  <tr>
+    <td class="number-val"><span >05.11</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{05.11 | floor | number:'2.2'}}</span></td>
+    <td><code><span ngNonBindable>{{05.11 | floor | number:'2.2'}}</span></code></td>
+  </tr>
+</table>
+
+
+<h4>&#9733; Number pipe: </h4>
+<pre ngNonBindable>{{ value_expression | number [ : digitsInfo [ : locale ] ] }}</pre>
+<table>
+  <tr>
+    <th colspan="1">Value</th>
+    <th></th>
+    <th>Result</th>
+    <th>Example</th>
+  </tr>
+  
+  <tr>
+    <td class="number-val"><span >05.123456</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{05.123456 | number}}</span></td>
+    <td><code><span ngNonBindable>{{05.123456 | number}}</span></code></td>
+  </tr>
+  <tr>
+    <td class="number-val"><span>1110.90</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{1110.90 | number}}</span></td>
+    <td><code><span ngNonBindable>{{10.90 | number}}</span></code></td>
+  </tr>
+  <tr>
+    <td class="number-val"><span>1110.90</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{1110.90 | number:'.3':'pt'}}</span></td>
+    <td><code><span ngNonBindable>{{1110.90 | number:'.3':'pt'}}</span></code></td>
+  </tr>
+  <tr>
+    <td class="number-val"><span>1110.90</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{1110.90 | number:'.3':'en'}}</span></td>
+    <td><code><span ngNonBindable>{{1110.90 | number:'.3':'en'}}</span></code></td>
+  </tr>
+</table>
+
+
+
+<h4>&#9733; Date pipe: </h4>
+<pre ngNonBindable>{{ value_expression | date [ : format [ : timezone [ : locale ] ] ] }}</pre>
+<table>
+  <tr>
+    <th colspan="1">Value</th>
+    <th></th>
+    <th>Result</th>
+    <th>Example</th>
+  </tr>
+  
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date}}</span></td>
+    <td><code><span ngNonBindable>{{now | date}}</span></code></td>
+  </tr>
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'short'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'short'}}</span></code></td>
+  </tr>
+  
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'shortDate'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'shortDate'}}</span></code></td>
+  </tr>
+
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'medium'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'medium'}}</span></code></td>
+  </tr>
+  
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'mediumDate'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'mediumDate'}}</span></code></td>
+  </tr>
+  
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'long'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'long'}}</span></code></td>
+  </tr>
+  
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'longDate'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'longDate'}}</span></code></td>
+  </tr>
+  
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'fullDate'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'fullDate'}}</span></code></td>
+  </tr>
+
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'shortTime'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'shortTime'}}</span></code></td>
+  </tr>
+
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'mediumTime'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'mediumTime'}}</span></code></td>
+  </tr>
+
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'longTime'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'longTime'}}</span></code></td>
+  </tr>
+
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'fullTime'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'fullTime'}}</span></code></td>
+  </tr>
+
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'h:mm a z'}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'h:mm a z'}}</span></code></td>
+  </tr>
+
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">Week {{now | date: 'ww'}}</span></td>
+    <td><code><span ngNonBindable>Week {{now | date: 'ww'}}</span></code></td>
+  </tr>
+
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: 'fullDate': '': 'en'}}, {{now | date: "HH:mm BBBB"}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: 'fullDate'}}, {{now | date: "HH:mm BBBB": '': 'en'}}</span></code></td>
+  </tr>
+
+  <tr>
+    <td class="number-val"><span >now</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{now | date: "EEEE, dd 'de' LLLL,  HH:mm BBBB"}}</span></td>
+    <td><code><span ngNonBindable>{{now | date: "EEEE, dd 'de' LLLL,  HH:mm BBBB"}}</span></code></td>
+  </tr>
+</table>
+
+<h4>&#9733; Currency pipe</h4>
+<pre ngNonBindable>{{ value_expression | currency [ : currencyCode [ : display [ : digitsInfo [ : locale ] ] ] ] }}</pre>
+<table>
+  <tr>
+    <th colspan="1">Value</th>
+    <th></th>
+    <th>Result</th>
+    <th>Example</th>
+  </tr>
+  
+  <tr>
+    <td class="number-val"><span >123456.78</span></td>
+    <td>&#8594;</td>
+    <td class="pipe-result"><span class="pipe-result-wrap">{{123456.78 | currency : 'R$'}}</span></td>
+    <td><code><span ngNonBindable>{{123456.78 | currency : 'R$'}}</span></code></td>
+  </tr>
+</table>

@@ -1,0 +1,89 @@
+{
+  "methods": {
+    "post": {
+      "200": {},
+      "400": {},
+      "401": {},
+      "403": {},
+      "404": {},
+      "409": {},
+      "500": {}
+    },
+    "put": {
+      "200": {},
+      "400": {},
+      "401": {},
+      "403": {},
+      "404": {},
+      "409": {},
+      "500": {}
+    },
+    "patch": {
+      "200": {},
+      "400": {},
+      "401": {},
+      "409": {},
+      "500": {}
+    },
+    "get": {
+      "200": {
+        "delay": 3000,
+        "data": [
+          {
+            "id": 1,
+            "username": "JohnGreen",
+            "firstName": "John",
+            "lastName": "Green",
+            "email": "john.green@email.com",
+            "password": "P@123abc",
+            "phone": "11987444321",
+            "userStatus": "active"
+          },
+          {
+            "id": 2,
+            "username": "MichaelGreen",
+            "firstName": "Michael",
+            "lastName": "Green",
+            "email": "michael.green@email.com",
+            "password": "P@123abc",
+            "phone": "11987444322",
+            "userStatus": "active"
+          }
+        ]
+      },
+      "400": {},
+      "401": {
+        "data": {
+          "error": [
+            {
+              "code": "401",
+              "message": "Unauthorized"
+            }
+          ]
+        }
+      },
+      "403": {
+        "data": {
+          "error": [
+            {
+              "code": "403",
+              "message": "Forbidden"
+            }
+          ]
+        }
+      },
+      "404": {},
+      "409": {},
+      "500": {}
+    },
+    "delete": {
+      "200": {},
+      "400": {},
+      "401": {},
+      "403": {},
+      "404": {},
+      "409": {},
+      "500": {}
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+   "results": [
+      {
+         "objectId": "NLliGuekfa",
+         "nome": "Norte",
+         "color": "#fb397a",
+         "percent": "15,1%",
+         "qtd": 17362,
+         "createdAt": "2020-03-25T16:17:19.825Z",
+         "updatedAt": "2020-05-05T22:01:46.381Z"
+      },
+      {
+         "objectId": "P8toKaSPgF",
+         "nome": "Nordeste",
+         "color": "#1fbb87",
+         "percent": "31,1%",
+         "qtd": 35641,
+         "createdAt": "2020-03-25T19:04:44.965Z",
+         "updatedAt": "2020-05-05T22:02:04.291Z"
+      },
+      {
+         "objectId": "QYxMrtOkwf",
+         "nome": "Centro-Oeste",
+         "color": "#5d78ff",
+         "percent": "3,0%",
+         "qtd": 3388,
+         "createdAt": "2020-03-25T19:05:05.792Z",
+         "updatedAt": "2020-05-05T22:02:15.625Z"
+      },
+      {
+         "objectId": "VOxUuJx5s9",
+         "nome": "Sudeste",
+         "color": "#fab822",
+         "percent": "45,6%",
+         "qtd": 52298,
+         "createdAt": "2020-03-25T19:05:25.476Z",
+         "updatedAt": "2020-05-05T22:02:33.257Z"
+      },
+      {
+         "objectId": "3OrOvsTANB",
+         "nome": "Sul",
+         "color": "#0088ff",
+         "percent": "5,3%",
+         "qtd": 6026,
+         "createdAt": "2020-03-25T19:05:53.075Z",
+         "updatedAt": "2020-05-05T22:02:49.605Z"
+      }
+   ]
+}

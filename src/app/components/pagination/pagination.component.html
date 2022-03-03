@@ -1,0 +1,29 @@
+
+  <section>
+  
+
+		<mat-form-field class="input-container">
+			<input
+      matInput
+      placeholder="Search"
+      autofocus
+      required
+      minlength="3"
+      maxlength="5"
+      [formControl]="searchForm"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+<!-- 
+			<input-errors [control]="ctrls.firstName">
+
+			</input-errors>
+ -->
+			<!-- <mat-hint align="end" *ngIf="ctrls.firstName.dirty">
+				{{ctrls.firstName.value.length}} of 65 characters
+			</mat-hint>
+			<mat-hint align="start" *ngIf="ctrls.firstName.dirty && ctrls.firstName.errors">
+				<div *ngIf="ctrls.firstName.errors.minlength" class="error-msg">At least 3 characters</div>
+				<div *ngIf="ctrls.firstName.errors.required" class="error-msg">FirstName is required</div>
+			</mat-hint> -->
+		</mat-form-field>
+  </section>

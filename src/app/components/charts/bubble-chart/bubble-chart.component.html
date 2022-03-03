@@ -1,0 +1,29 @@
+<div>
+  <div>
+    <div style="display: block">
+      <canvas id="bubble-chart" baseChart
+        [datasets]="bubbleChartData"
+        [options]="bubbleChartOptions"
+        [colors]="bubbleChartColors"
+        [legend]="bubbleChartLegend"
+        [chartType]="bubbleChartType"  
+        (chartHovered)="chartHovered($event)"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+        (chartDragged)="chartClicked($event)"
+        (chartDrag)="chartClicked($event)"
+        (chartDragStart)="chartClicked($event)"
+        (mousedown)="mousedown($event)"
+
+        (mousedrag)="mousedown($event)"
+        (mousedragged)="mousedown($event)"
+
+        (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave($event)"
+        (onHover)="console.log('on...hover')"
+        >
+      </canvas>
+    </div>
+    <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+/* Add application styles & imports to this file! */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import 'node_modules/tui-calendar/dist/tui-calendar.min.css';
+
+body{
+  padding: 0;
+  margin: 0;
+}
+.d-flex {
+  display: flex;
+}
+.d-flex.center {
+  align-items: center;
+}
+.d-flex.col {
+    flex-direction: column;
+}
+
+.p-xm {
+  padding: 8px;
+}
+.p-s {
+  padding: 16px;
+}
+.p-l {
+  padding: 32px;
+}
+.py-s {
+  padding-bottom: 16px !important;
+  padding-top: 16px !important;
+}
+.py-m {
+  padding-bottom: 24px !important;
+  padding-top: 24px !important;
+}
+.center {
+  text-align: center;
+}
+.bold{
+  font-weight: bold;
+}

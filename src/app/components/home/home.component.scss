@@ -1,0 +1,30 @@
+.tiles {
+  padding: 0;
+  margin:0;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: stretch;
+  cursor: pointer;
+
+  > li {
+    list-style: none;
+    min-width: 150px;
+    max-width: 150px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 2px 5px 14px #c1c2c3;
+    border-radius: 8px;
+    transition: transform 300ms;
+    transform: scale(1);
+    margin: 8px;
+    &:hover {
+      box-shadow: 2px 5px 14px #a4a5a6;
+      transform: scale(1.05);
+      transition: transform 300ms;
+    }
+    .tile-title {
+      margin: 0;
+      text-align: center;
+    }
+  }
+}

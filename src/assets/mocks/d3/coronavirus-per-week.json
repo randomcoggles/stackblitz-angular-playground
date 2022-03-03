@@ -1,0 +1,92 @@
+{
+   "results": [
+      {
+         "objectId": "sAtsgZRUPY",
+         "label": "9ª",
+         "createdAt": "2020-03-25T16:18:22.856Z",
+         "updatedAt": "2020-03-25T22:06:06.085Z",
+         "qtd_confirmado": 2,
+         "qtd_obito": 0
+      },
+      {
+         "objectId": "6KY0E3ZhQr",
+         "label": "10ª",
+         "qtd_confirmado": 17,
+         "qtd_obito": 0,
+         "createdAt": "2020-03-25T19:06:22.700Z",
+         "updatedAt": "2020-03-25T22:06:18.685Z"
+      },
+      {
+         "objectId": "IWjVSa31TF",
+         "label": "11ª",
+         "qtd_confirmado": 102,
+         "qtd_obito": 0,
+         "createdAt": "2020-03-25T19:06:31.052Z",
+         "updatedAt": "2020-03-25T22:06:30.810Z"
+      },
+      {
+         "objectId": "9INuBTmLBG",
+         "label": "12ª",
+         "qtd_confirmado": 1007,
+         "qtd_obito": 18,
+         "createdAt": "2020-03-25T19:06:41.632Z",
+         "updatedAt": "2020-03-25T22:06:45.148Z"
+      },
+      {
+         "objectId": "iR2UF8lRPP",
+         "label": "13ª",
+         "qtd_confirmado": 2775,
+         "qtd_obito": 96,
+         "createdAt": "2020-03-25T19:06:58.184Z",
+         "updatedAt": "2020-03-30T19:40:43.022Z"
+      },
+      {
+         "objectId": "h5lUT8UHeF",
+         "label": "14ª",
+         "qtd_confirmado": 6375,
+         "qtd_obito": 318,
+         "createdAt": "2020-03-29T19:35:25.581Z",
+         "updatedAt": "2020-04-05T19:56:38.702Z"
+      },
+      {
+         "objectId": "py3fiIHE6Y",
+         "label": "15ª",
+         "qtd_confirmado": 10449,
+         "qtd_obito": 692,
+         "createdAt": "2020-04-05T19:56:53.140Z",
+         "updatedAt": "2020-04-11T20:38:45.047Z"
+      },
+      {
+         "objectId": "8QymKugRc9",
+         "label": "16ª",
+         "qtd_confirmado": 15872,
+         "qtd_obito": 1223,
+         "createdAt": "2020-04-12T20:12:55.755Z",
+         "updatedAt": "2020-04-18T18:46:31.650Z"
+      },
+      {
+         "objectId": "lTBOrMHwD9",
+         "label": "17ª",
+         "qtd_confirmado": 21910,
+         "qtd_obito": 1669,
+         "createdAt": "2020-04-19T19:35:56.867Z",
+         "updatedAt": "2020-04-25T20:00:35.810Z"
+      },
+      {
+         "objectId": "AcjLpGidn2",
+         "label": "18ª",
+         "qtd_confirmado": 37887,
+         "qtd_obito": 2708,
+         "createdAt": "2020-04-26T20:01:26.116Z",
+         "updatedAt": "2020-05-04T19:22:03.517Z"
+      },
+      {
+         "objectId": "DuFWcGaE6c",
+         "label": "19ª",
+         "qtd_confirmado": 18319,
+         "qtd_obito": 1197,
+         "createdAt": "2020-05-03T20:17:23.653Z",
+         "updatedAt": "2020-05-05T22:03:11.522Z"
+      }
+   ]
+}

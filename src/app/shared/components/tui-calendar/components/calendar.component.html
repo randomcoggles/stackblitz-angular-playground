@@ -1,0 +1,29 @@
+Calendar works!
+<!--<ngx-tui-calendar #exampleCalendar id="example-calendar" (tuiCalendarCreated)="onTuiCalendarCreate($event)"></ngx-tui-calendar>
+-->
+<input type="date" name="date" id="date" (change)="onDateChange($event)">
+<button (click)="onCalendarPrev()">
+    previous
+</button>
+<button (click)="onCalendarNext()">
+    next
+</button>
+
+<select placeholder="View" value="1" (change)="onChangeCalendarView($event)">
+    <option *ngFor="let view of calendarViews" [value]="view.value">
+      {{ view.name }}
+    </option>
+  </select>
+
+
+<ngx-tui-calendar #calendar
+                  (tuiCalendarCreated)="onTuiCalendarCreated($event)"
+                  [defaultView]="defaultView"
+                  (dayNameClicked)="onDate($event)"
+                  (timeClicked)="onTime($event)"
+                  (scheduleClicked)="onSchedule($event)"
+                  (beforeCreateSchedule)="onBeforeCreateSchedule($event)"
+                  [schedules]="schedules"
+                  >
+</ngx-tui-calendar>
+

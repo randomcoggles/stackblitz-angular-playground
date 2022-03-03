@@ -1,0 +1,27 @@
+<h3>
+  Memoised functions
+</h3>
+<p *ngIf="calculatingNextPrimeFibo">Wait. Calculanting...</p>
+
+<button (click)="processNextPrimeFiboWithMemoisation()">
+  Memoised Next Prime Fibonacci - takes about 3s
+  </button>  
+<br/>
+<strong > 
+  {{ processingNextPrimeFiboWithMemoisation | json}}
+</strong>
+
+<hr>
+
+
+<button (click)="processNonMemoisedNextPrimeFiboWithMemoisation()">
+  Non Memoised Next Prime Fibonacci - takes about 15s
+  </button> 
+<br/>
+<strong > 
+  {{nonMemoisedProcessingNextPrimeFiboWithMemoisation | json}}
+</strong>
+
+<p>About 600% to 500% of performance improvement</p>
+
+

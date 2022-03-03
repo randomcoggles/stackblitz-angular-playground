@@ -1,0 +1,32 @@
+form {
+  display: flex;
+  justify-content: center;
+}
+form.flex-row{
+  flex-wrap: wrap;
+}
+.fields-wrap{  
+  max-width: 650px;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.input-container{
+  flex-basis: 49%;
+  .checkbox-wrap{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+}
+.error-msg {
+  color: #f44336;
+}
+.form-group {
+  width: 100%;
+}
+.buttons {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+}

@@ -1,0 +1,171 @@
+{
+	"data": [
+		{
+			"score": 20,
+			"value": 1000,
+			"debts": 10,
+			"probability": 2
+		},
+		{
+			"score": 970,
+			"value": 6800.123,
+			"debts": 34,
+			"probability": 97
+		},
+		{
+			"score": 140,
+			"value": 1800,
+			"debts": 10,
+			"probability": 14
+		},
+		{
+			"score": 160,
+			"value": 3400,
+			"debts": 10,
+			"probability": 16
+		},
+		{
+			"score": 270,
+			"value": 1300,
+			"debts": 10,
+			"probability": 27
+		},
+		{
+			"score": 210,
+			"value": 6700,
+			"debts": 10,
+			"probability": 21
+		},
+		{
+			"score": 330,
+			"value": 3100,
+			"debts": 10,
+			"probability": 33
+		},
+		{
+			"score": 350,
+			"value": 5500,
+			"debts": 10,
+			"probability": 35
+		},
+		{
+			"score": 420,
+			"value": 1600,
+			"debts": 10,
+			"probability": 42
+		},
+		{
+			"score": 420,
+			"value": 3900,
+			"debts": 10,
+			"probability": 42
+		},
+		{
+			"score": 510,
+			"value": 6500,
+			"debts": 10,
+			"probability": 51
+		},
+		{
+			"score": 640,
+			"value": 6300,
+			"debts": 10,
+			"probability": 64
+		},
+		{
+			"score": 650,
+			"value": 7900,
+			"debts": 10,
+			"probability": 65
+		},
+		{
+			"score": 790,
+			"value": 8600,
+			"debts": 10,
+			"probability": 79
+		},
+		{
+			"score": 930,
+			"value": 9150.33,
+			"debts": 15,
+			"probability": 93
+		},
+		{
+			"score": 1000,
+			"value": 8900,
+			"debts": 15,
+			"probability": 100
+		},
+		{
+			"score": 20,
+			"value": 2300,
+			"debts": 30,
+			"probability": 2
+		},
+		{
+			"score": 315,
+			"value": 2100,
+			"debts": 30,
+			"probability": 31.5
+		},
+		{
+			"score": 870,
+			"value": 6500.123,
+			"debts": 10,
+			"probability": 87
+		},
+		{
+			"score": 890,
+			"value": 3700.978,
+			"debts": 30,
+			"probability": 89
+		},
+		{
+			"score": 260,
+			"value": 4600,
+			"debts": 50,
+			"probability": 26
+		},
+		{
+			"score": 870,
+			"value": 8700.4321,
+			"debts": 50,
+			"probability": 87
+		},
+		{
+			"score": 410,
+			"value": 5200,
+			"debts": 20,
+			"probability": 41
+		},
+		{
+			"score": 500,
+			"value": 8700.237,
+			"debts": 20,
+			"probability": 50
+		},
+		{
+			"score": 590,
+			"value": 4000,
+			"debts": 20,
+			"probability": 59
+		},
+		{
+			"score": 720,
+			"value": 4900,
+			"debts": 20,
+			"probability": 72
+		},
+		{
+			"score": 790,
+			"value": 6300,
+			"debts": 65,
+			"probability": 79
+		}
+	],
+	"config": {
+		"totalMax": 11000,
+		"lastUpdate": "2019-10-30"
+	},
+	"hasHistory": true
+}

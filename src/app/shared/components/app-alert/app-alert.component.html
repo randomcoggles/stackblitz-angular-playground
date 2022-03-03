@@ -1,0 +1,7 @@
+<div role="alert" class="alert" [ngClass]="['alert-'+ config.context]">
+  
+	<span class="menu-icon" (click)="sidenav.toggle()"></span>
+  
+  <strong>{{config.title}}</strong>&nbsp; <span>{{config.content}}</span>
+  <button class="alert-close" (click)="onClose()" >&times;</button>  
+</div>

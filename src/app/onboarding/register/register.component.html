@@ -1,0 +1,140 @@
+<div><a href="javascript:history.back()">Back</a></div>
+<h3 class="center">Register</h3>
+<app-type-ahead></app-type-ahead>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex-row">
+	<section class="d-flex form-section fields-wrap">
+
+		<mat-form-field class="input-container">
+			<input
+      matInput
+      placeholder="First Name"
+      autofocus
+      autocomplete="off"
+      formControlName="firstName"
+      required
+      minlength="3"
+      maxlength="5"
+      />
+<!-- 
+			<input-errors [control]="ctrls.firstName">
+
+			</input-errors>
+ -->
+			<mat-hint align="end" *ngIf="ctrls.firstName.dirty">
+				{{ctrls.firstName.value.length}} of 65 characters
+			</mat-hint>
+			<mat-hint align="start" *ngIf="ctrls.firstName.dirty && ctrls.firstName.errors">
+				<div *ngIf="ctrls.firstName.errors.minlength" class="error-msg">At least 3 characters</div>
+				<div *ngIf="ctrls.firstName.errors.required" class="error-msg">FirstName is required</div>
+			</mat-hint>
+		</mat-form-field>
+
+
+
+		<mat-form-field class="input-container">
+			<input matInput placeholder="Last Name"
+          autofocus autocomplete="off"
+          formControlName="lastName" required minlength="3" maxlength="65" />
+
+			<mat-hint align="end" *ngIf="ctrls.lastName.dirty">
+				{{ctrls.lastName.value.length}} of 65 characters
+			</mat-hint>
+			<mat-hint align="start" *ngIf="ctrls.lastName.dirty && ctrls.lastName.errors">
+				<div *ngIf="ctrls.lastName.errors.minlength" class="error-msg">At least 3 characters</div>
+				<div *ngIf="ctrls.lastName.errors.required" class="error-msg">Last name is required</div>
+			</mat-hint>
+		</mat-form-field>
+
+
+
+		<mat-form-field class="input-container">
+			<input
+				matInput
+				placeholder="User name"
+        autofocus
+				autocomplete="off"
+				formControlName="username"
+				required
+				minlength="3"
+				maxlength="65" />
+
+			<mat-hint align="end" *ngIf="ctrls.username.dirty">
+				{{ctrls.username.value.length}} of 65 characters
+			</mat-hint>
+			<mat-hint align="start" *ngIf="ctrls.username.dirty && ctrls.username.errors">
+				<div *ngIf="ctrls.username.errors.minlength" class="error-msg">At least 3 characters</div>
+				<div *ngIf="ctrls.username.errors.required" class="error-msg">User name is required</div>
+			</mat-hint>
+		</mat-form-field>
+
+
+
+		<mat-form-field class="input-container">
+			<input matInput
+        placeholder="Password"
+        type="password"
+        autocomplete="off"
+        formControlName="password" required minlength="3" maxlength="65" />
+
+			<mat-hint align="end" *ngIf="ctrls.password.dirty">
+				{{ctrls.password.value.length}} of 65 characters
+			</mat-hint>
+			<mat-hint align="start" *ngIf="ctrls.password.dirty && ctrls.password.errors">
+				<div *ngIf="ctrls.password.errors.minlength" class="error-msg">Password must be at least 6 characters
+				</div>
+				<div *ngIf="ctrls.password.errors.required" class="error-msg">Password is required</div>
+			</mat-hint>
+		</mat-form-field>
+
+
+		<mat-form-field class="input-container">
+			<input matInput
+        placeholder="CPF"
+        autocomplete="off"
+        formControlName="cpf"
+        cpf
+        required
+      />
+
+			<mat-hint align="end" *ngIf="ctrls.cpf.dirty">
+				{{ctrls.cpf?.value.length}} of 65 characters
+			</mat-hint>
+
+			<mat-hint align="start" *ngIf="ctrls.cpf.dirty && ctrls.cpf.errors">
+				<div *ngIf="ctrls.cpf.errors.minlength" class="error-msg">CPF must be at least 6 characters
+				</div>
+				<div *ngIf="ctrls.cpf.errors.required" class="error-msg">CPF is required</div>
+				<div *ngIf="ctrls.cpf?.errors" class="error-msg">O CPF: {{ctrls.cpf.errors.message}}</div>
+			</mat-hint>
+		</mat-form-field>
+
+		<!-- <p>{{ctrls.cpf?.errors | json }}</p> -->
+		<!-- [disabled]="registerForm.invalid"  -->
+		<div class="form-group flex center buttons">
+			<button mat-raised-button color="warn">Cancel(Esc)</button>
+
+
+			<button mat-raised-button type="button" color="primary"
+        [title]="registerForm.invalid ? 'All fields must be valid' : 'Submit form'"
+        (click)="submit()">
+        <mat-icon aria-label="Add todo icon"><i class="material-icons rotate-minus-30">send</i></mat-icon>
+        Submit
+      </button>
+
+
+
+		</div>
+		<p *seIfOffline>Sorry. Your'e offline</p>
+		<se-if-offline>Sorry. Your'e offline</se-if-offline>
+		<button type="button" mat-button color="warn" (click)="hitHttpCall()">Hit request</button>
+
+		<div><a target="_blank" href="https://swimlane.github.io/ngx-charts/#/ngx-charts/bar-horizontal-stacked">A better
+				chart</a></div>
+	</section>
+
+
+	<!-- <appUiSubscription [httpCallInfo]="httpCallInfo" (retry)="hitHttpCall()"  ></appUiSubscription> -->
+
+
+	<!-- <app-bubble-chart></app-bubble-chart> -->
+</form>

@@ -1,0 +1,27 @@
+
+.alert-danger {
+   color: #f44336; /* Red */
+}
+.alert-success {
+    color: #36f456;  
+} 
+.alert{
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: solid 1px;
+    background-color: #fff;
+}
+
+.fade-out {
+    opacity: .3;
+    transition: opacity .5s;
+}
+.btn-close { 
+  float: left;
+  margin-left: -20px;
+  margin-top: -17px;
+ }
+.text-left {
+  text-align: left;
+}

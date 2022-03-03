@@ -1,0 +1,76 @@
+const error = {
+			headers: {
+				normalizedNames: {},
+				lazyUpdate: null,
+			},
+			status: 500,
+			statusText: 'OK',
+			url:'https://my-domain.com/api/users/v1',
+			ok: false,
+			name: 'HttpErrorResponse',
+			message:
+				'Http failure response for https://my-domain.com/api/users/v1: 500 OK',
+			error: [
+				{
+					code: '401',
+					message: 'Internal Server Error',
+				},
+			],
+		};
+		const obsevable = this.http.post(this.baseUrl, user);
+
+		// const oldSubscribe = obsevable.__proto__.subscribe;
+
+		// obsevable.subscribe = (config) => {
+
+		//   obsevable['appHttpInfo'] = {
+		//     'info': 'This is the info',
+		//     isLoading: true
+
+		//     };
+
+		//   const newConfig = {
+		//     next: function(){
+		//       obsevable['appHttpInfo'] = false;
+		//       config.next && config.next.apply(obsevable, arguments);
+		//     },
+		//     error: function(){
+
+		//       obsevable['appHttpInfo'] = obsevable['appHttpInfo'] || {};
+		//       obsevable['appHttpInfo'].isLoading = false;
+		//       obsevable['appHttpInfo']['errorResponse'] = arguments[0];
+		//       config && config.error && config.error.apply(obsevable, arguments);
+		//     },
+		//     complete: function(){
+		//       obsevable['appHttpInfo'] = false;
+		//       console.log('Htttp call completed!...........');
+		//       config.complete && config.complete.apply(obsevable, arguments);
+		//     },
+		//   }; // End newConfig
+
+		//   return oldSubscribe.apply(obsevable, [newConfig, ...arguments]);
+		// }
+
+		// ngOnChanges(changes: SimpleChanges) {
+		// ...
+
+		return obsevable;
+
+
+
+    
+      const pet = {
+        "category": {
+          "name": "string"
+        },
+        "name": "doggie",
+        "photoUrls": [
+          "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1887&q=80"
+        ],
+        "tags": [
+          {
+            "name": "dogs"
+          }
+        ],
+        "status": "available"
+      }

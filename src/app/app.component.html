@@ -1,0 +1,50 @@
+<mat-toolbar class="app-top-nav" color="primary">
+
+	<span class="menu-icon" (click)="sideNavService.toggle()"></span>
+	<span class="header-title" routerLink="home">Angular Playground by Itamar</span>
+	<!--
+	<button mat-raised-button color="primary" (click)="sampleService.increaseCounter()" >Increase Counter</button> Counter: {{sampleService.counter}} - --> 
+	<!--<se-if-offline>Your'e online - component</se-if-offline> -->
+	<span *seIfOffline> Sorry. Your'e offline</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="page-main">
+	<mat-sidenav #sidenav 
+		[mode]="sideNavService.mode$ | async" 
+		[opened]="sideNavService.opened$ | async">
+
+		<mat-list class="side-menu">
+			<mat-list-item routerLink="">Home</mat-list-item>
+			<mat-list-item routerLink="miscellaneous">Miscellanous</mat-list-item>
+			<mat-list-item routerLink="register">Register</mat-list-item>
+			<mat-list-item routerLink="alerts">Alerts</mat-list-item>
+			<mat-list-item routerLink="dialogs">Dialogs</mat-list-item>
+			<mat-list-item routerLink="pipes">Pipes</mat-list-item>
+			<mat-list-item routerLink="charts">Charts</mat-list-item>
+			<mat-list-item routerLink="not-found">Not found</mat-list-item>
+			<mat-list-item routerLink="input-validations">Input validations</mat-list-item>
+			<mat-list-item routerLink="chrome-new-features">Chrome new features</mat-list-item>
+			<mat-list-item routerLink="bridge-pattern">Bridge Pattern</mat-list-item>
+			<mat-list-item routerLink="timeline">Timeline</mat-list-item>
+			<mat-list-item routerLink="subscriptions">Subscriptions</mat-list-item>
+			<mat-list-item routerLink="ngrx-playground">NGRX Playground</mat-list-item>
+			<mat-list-item routerLink="tree-example">Tree example</mat-list-item>
+			<mat-list-item routerLink="tui-calendar">TUI Calendar</mat-list-item>
+			<mat-list-item routerLink="xss-example">XSS Example</mat-list-item>
+			<mat-list-item routerLink="xss-example/posts">XSS Posts Example</mat-list-item>
+			<mat-list-item routerLink="pagination">Pagination</mat-list-item>
+		</mat-list>
+
+	</mat-sidenav>
+
+	<mat-sidenav-content class=" flex side-nav-container">
+		<div class="flex page-main-content">
+			<router-outlet></router-outlet>
+		</div>
+	</mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar class="example-footer" color="primary">Footer</mat-toolbar>
+
+
+

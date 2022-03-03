@@ -1,0 +1,34 @@
+<ul class="tiles">
+	<li routerLink="/register">    
+		<h4 class="tile-title">Register form</h4>    
+	</li>
+  
+	<li routerLink="/pipes">    
+		<h4 class="tile-title">Angular built-in and custom pipes</h4>    
+	</li>
+  
+	<li routerLink="/charts">    
+		<h4 class="tile-title">Charts samples</h4>    
+	</li>
+  
+	<li routerLink="/algorithms">    
+		<h4 class="tile-title">Algorithms</h4>    
+	</li>
+  
+	<li routerLink="/rxjs-playground">    
+		<h4 class="tile-title">Rxjs Playground</h4>    
+	</li>
+  
+	<li *ngFor="let star of stars">{{star}}</li>
+
+</ul>
+<p>
+
+<ng-template *ngFor="let star of stars">
+	<span>-- {{star}} --</span>
+</ng-template>
+  
+	
+
+<a target="_blank" href="https://stackblitz.com/edit/itamar-serafim-angular6-playground?file=src%2Fapp%2Fforms%2Fforms.component.scss">Other app</a>
+</p>

@@ -1,0 +1,35 @@
+
+<div class="text-left" *ngIf="httpCallInfo" [ngClass]="{'fade-out': fadeOut }" >
+
+  <!-- Loading -->  
+  <div *ngIf="httpCallInfo.isLoading" class="alert alert-info">
+    <mat-spinner diameter="20"  ></mat-spinner> 
+    {{httpCallInfo.loadingMessage}}
+  </div>
+
+
+  <!-- Error -->
+  <!-- TODO: Make it suport multiple messages -->
+  <div *ngIf="httpCallInfo?.error" class="alert alert-danger">
+   <button  class="btn-close" mat-icon-button color="warn" (click)="destroyThis()" >
+        <mat-icon>close</mat-icon>
+    </button>
+    <p class="text-left" *ngFor="let msg of httpCallInfo.error.messages"> {{msg}}</p>
+    <div>
+      <button 
+        *ngIf="this.retry"
+        (click)="onRetry()"
+        mat-stroked-button color="warn">Retry</button>
+    </div>    
+  </div>
+
+
+  <!-- Success -->
+  <div *ngIf="httpCallInfo?.success" class="alert alert-success">    
+    <button class="btn-close" mat-icon-button color="warn" (click)="destroyThis()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <p *ngFor="let msg of httpCallInfo.success.messages"> {{msg}}</p>
+  </div>
+
+</div>
