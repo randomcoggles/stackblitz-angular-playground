@@ -1,4 +1,5 @@
 <ngx-graph
+  draggingEnabled="f"
   class="chart-container"
   [view]="[800, 550]"
   [links]="links"
@@ -52,12 +53,18 @@
       </svg:text> 
       <svg:text class="ds-sub" alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2 + 10">
        Dataset
-      </svg:text>       
+      </svg:text>
+      
+      <svg:text class="ds-sub" alignment-baseline="central" [attr.x]="40" [attr.y]="node.dimension.height / 2 + 10">
+       
+      </svg:text> 
+      <!-- <text x="140" [attr.y]="node.dimension.height / 2 - 25" style="font-family: FontAwesome" >&#xf0ce; </text> -->
+            
     </svg:g>
 
     <svg:g *ngIf="node.type === 'sqlArtifact'">
       <svg:circle stroke="brown" cx="50" fill="#fff" [attr.cy]="node.dimension.height / 2" r="60"/>
-      <text x="50" [attr.y]="node.dimension.height / 2 - 25" style="font-family: FontAwesome" >&#xf040;</text>
+      <text x="40" [attr.y]="node.dimension.height / 2 - 25" style="font-family: FontAwesome" >&#xf121; </text>
       
       
       <svg:text alignment-baseline="central" width="50" [attr.x]="10" [attr.y]="node.dimension.height / 2">

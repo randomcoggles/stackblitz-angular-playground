@@ -43,7 +43,7 @@ export class NgxGraphTestComponent implements OnInit {
 		},
 		{
 			id: 'c2',
-			label: 'Resource B',
+			label: 'Resource Bo...',
 			type: 'dataset',
 		}
 	];
