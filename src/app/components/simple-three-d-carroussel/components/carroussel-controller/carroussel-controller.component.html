@@ -1,0 +1,21 @@
+<div class="wrap">
+	<!-- <h5>Controller panel {{tcManager.depth }}</h5> -->
+	
+	<div class="perspective-area" 
+    #perspectiveArea 
+    (c)="perspectiveAreaMousemove($event)"
+    (mousemove)="perspectiveAreaMousemove($event)"
+		(wheel)="perspectiveAreaMouseWheel($event)">
+		<span>
+      <span class="little-ball"
+        [style.left]="ballPoint?.x + 'px'"
+        [style.top]="ballPoint?.y + 'px'"
+        [style.transform]="ballPointTransform"
+      ></span>
+		</span>
+	</div>
+  <!-- <div class="secondary-controls">
+    <input type="range" id="sld-scale"/>
+  </div>   -->
+</div>
+<span style="background-color: green; color: #fff"> {{ballPoint | json}}</span>
