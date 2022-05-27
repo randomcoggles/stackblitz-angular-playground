@@ -8,7 +8,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 
-import { MiscellaneousComponent } from './miscellaneous.component'
+import { MiscellaneousComponent } from './miscellaneous.component';
+import { NgxGraphModule } from '@swimlane/ngx-graph';
+
+import { NgxGraphTestComponent } from './components/ngx-graph-test/ngx-graph-test.component';
+
 
 const routes: Route[] = [
 	{
@@ -19,6 +23,11 @@ const routes: Route[] = [
 				path: '',
 				component: PrimeSpiralComponent,
 			},
+			{
+				path: 'ngx-graph-test',
+				component: NgxGraphTestComponent,
+			},
+			
 			{
 				path: 'prime-spiral',
 				component: PrimeSpiralComponent,
@@ -42,13 +51,14 @@ const routes: Route[] = [
 		CommonModule,
 		RouterModule.forChild(routes),
 		MatButtonModule,
+		NgxGraphModule,
 		FormsModule,
 		ReactiveFormsModule,
 		MatFormFieldModule,
 		MatInputModule,
     MatListModule
 	],
-	declarations: [MiscellaneousComponent, PrimeSpiralComponent],
+	declarations: [MiscellaneousComponent, PrimeSpiralComponent, NgxGraphTestComponent],
 })
 export class MiscellaneousModule {}
 

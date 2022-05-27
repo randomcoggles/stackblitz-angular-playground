@@ -1,0 +1,16 @@
+:host ::ng-deep {
+	font-family: Roboto, 'Courier New', Courier, monospace;
+	.ds-sub {
+		fill: #c3c3c3;
+		font-size: 12px;
+	}
+	.dataset-chape {
+		fill: #fff;
+		stroke: #4a5568;
+		stroke-width: 2;
+		.title {
+			font-weight: bold;
+			fill: brown;
+		}
+	}
+}
