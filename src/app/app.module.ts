@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppUISubscriptionComponent } from './core/ui/app-ui-subscription';
 import { CommonModule } from '@angular/common';
-import { AppHttpSubscription } from './core/decorators/ui-http-response';
+// import { AppHttpSubscription } from './core/decorators/ui-http-response';
 import { ChartsModule } from 'ng2-charts';
 import { BubbleChartComponent } from './components/charts/bubble-chart/bubble-chart.component';
 import { HomeComponent } from './components/home/home.component';
@@ -25,7 +25,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SubscriptionsComponent } from './components/subscriptions/subscriptions.component';
 import { CpfDirective } from './shared/directives/cpf.directive';
-import { IfOfflineComponent } from './shared/components/se-if-offline.component';
+// import { IfOfflineComponent } from './shared/components/se-if-offline.component';
 import { IfOfflineDirective } from './shared/directives/if-offline.directive';
 import { AlgorithmsComponent } from './components/algorithms/algorithms.component';
 import { AppAlertModule } from './shared/components/app-alert/app-alert.module';
@@ -33,7 +33,7 @@ import { AppAlertsComponent } from './components/alerts/alerts.component';
 import { SeIfOfflineModule } from './shared/components/se-if-offline.module';
 
 import { SidenavModule } from './shared/components/sidenav/sidenav.module';
-import { ThreeDCarrousselModule } from './components/simple-three-d-carroussel/three-d-carroussel.module';
+// import { ThreeDCarrousselModule } from './components/simple-three-d-carroussel/three-d-carroussel.module';
 
 
 registerLocaleData(localePt, localePtExtra, localeEnExtra);
@@ -45,7 +45,7 @@ registerLocaleData(localePt, localePtExtra, localeEnExtra);
 	  BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
-    ThreeDCarrousselModule,
+    // ThreeDCarrousselModule,
     FormsModule,
     ReactiveFormsModule,
     AngularComponentsModule,
