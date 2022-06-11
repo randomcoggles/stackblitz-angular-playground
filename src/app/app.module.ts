@@ -29,7 +29,7 @@ import { AppAlertsComponent } from './components/alerts/alerts.component';
 import { SeIfOfflineModule } from './shared/components/se-if-offline.module';
 
 import { SidenavModule } from './shared/components/sidenav/sidenav.module';
-import { ThreeDCarrousselModule } from './components/simple-three-d-carroussel/three-d-carroussel.module';
+// import { ThreeDCarrousselModule } from './components/simple-three-d-carroussel/three-d-carroussel.module';
 
 
 registerLocaleData(localePt, localePtExtra, localeEnExtra);
@@ -41,7 +41,7 @@ registerLocaleData(localePt, localePtExtra, localeEnExtra);
 	  BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
-    ThreeDCarrousselModule,
+    // ThreeDCarrousselModule,
     FormsModule,
     ReactiveFormsModule,
     AngularComponentsModule,
