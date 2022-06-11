@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 import { SideNavService } from '../../../shared/components/sidenav/sidenav.service';
 
@@ -53,12 +53,12 @@ export class PrimeSpiralComponent implements AfterViewInit {
 		const points = [];
 		let nextDir = 'r'; // r, l, u, d
 		const step = 38;
-		const circleGroup = document.getElementById('circle-group');
+		const circleGroup = document.getElementById('circle-group') as any;
 		const svgns = 'http://www.w3.org/2000/svg';
 
 		const circle = document.createElementNS(svgns, 'circle');
-		circle.setAttributeNS(null, 'cx', currentPoint.x);
-		circle.setAttributeNS(null, 'cy', currentPoint.y);
+		circle.setAttributeNS(null, 'cx', currentPoint.x + '');
+		circle.setAttributeNS(null, 'cy', currentPoint.y + '');
 		circle.setAttributeNS(null, 'stroke', 'none');
 		circle.setAttributeNS(null, 'fill', '#2196f3');
 		circle.setAttributeNS(null, 'r', '9');
@@ -122,7 +122,7 @@ export class PrimeSpiralComponent implements AfterViewInit {
 			const text = document.createElementNS(svgns, 'text');
 			text.setAttributeNS(null, 'x', '' + (currentPoint.x - shiftText));
 			text.setAttributeNS(null, 'y', '' + (currentPoint.y + 5));
-			text.textContent = i;
+			text.textContent = i + '';
 			if (is_prime) circleGroup.appendChild(text);
 		}
 	}
@@ -150,8 +150,8 @@ export class PrimeSpiralComponent implements AfterViewInit {
 		const shiftText = (textLength * 9) / 2;
 
 		const circle = document.createElementNS(svgns, 'circle');
-		circle.setAttributeNS(null, 'cx', point.x);
-		circle.setAttributeNS(null, 'cy', point.y);
+		circle.setAttributeNS(null, 'cx', point.x + '');
+		circle.setAttributeNS(null, 'cy', point.y + '');
 		circle.setAttributeNS(null, 'stroke', isPrime ? this.drawColor : 'none');
 		circle.setAttributeNS(null, 'fill', isPrime ? this.drawColor : 'lightblue');
 		circle.setAttributeNS(null, 'r', isPrime ? '7' : '2');

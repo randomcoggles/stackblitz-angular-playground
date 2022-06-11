@@ -1,9 +1,7 @@
 import { Component, ViewChild, AfterViewInit, OnInit } from "@angular/core";
-import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { bubbleData } from "../../data-2";
 import { bubbleData as bubbleData2 } from "../../data";
 import { generateColor } from "./utils/color-algorithm";
-import { CircleComponent } from "@swimlane/ngx-charts";
 import { Subject } from "rxjs";
 import { ChartsService } from "../../services/charts.service";
 import { tap } from "rxjs/operators";

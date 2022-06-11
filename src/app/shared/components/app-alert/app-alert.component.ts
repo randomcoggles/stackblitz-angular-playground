@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
+import { SideNavService } from '../sidenav/sidenav.service';
 
 @Component({
 	selector: 'app-alert',
@@ -14,7 +15,7 @@ export class AppAlertComponent {
 
 	@Output() close = new EventEmitter();
 
-  constructor(private host: ElementRef<HTMLElement>){}
+  constructor(private host: ElementRef<HTMLElement>, public sidenav: SideNavService){}
 
 	onClose() {
     this.host.nativeElement.remove();
