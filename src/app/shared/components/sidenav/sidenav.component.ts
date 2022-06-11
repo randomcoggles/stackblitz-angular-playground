@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SidenavService } from './sidenav.service';
 import { FormControl } from '@angular/forms';
 
 @Component({

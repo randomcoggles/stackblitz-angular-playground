@@ -1,7 +1,7 @@
 /* Add application styles & imports to this file! */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-@import 'node_modules/tui-calendar/dist/tui-calendar.min.css';
+/* @import 'node_modules/tui-calendar/dist/tui-calendar.min.css'; */
 
 body{
   padding: 0;

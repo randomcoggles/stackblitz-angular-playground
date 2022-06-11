@@ -22,7 +22,7 @@ export class IntlFeaturesComponent implements OnInit {
   }
   
 
-	private showMessage(lang: string) {
+	showMessage(lang: string) {
 		const relatiTimeFormat = new Intl['RelativeTimeFormat'](lang, { numeric: 'auto' });
 		let msg = {
 			yesterday: relatiTimeFormat.format(-1, 'day'),

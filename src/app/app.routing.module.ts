@@ -4,8 +4,6 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppValidationsComponent } from './components/forms/validations.component';
 
-import { AppChartsModule } from './charts/charts.module';
-
 import { NgModule } from '@angular/core';
 import { SubscriptionsComponent } from './components/subscriptions/subscriptions.component';
 import { AlgorithmsComponent } from './components/algorithms/algorithms.component';
@@ -22,11 +20,11 @@ export const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{
 		path: 'charts',
-		loadChildren: './charts/charts.module#AppChartsModule'
+		loadChildren: () => import('./charts/charts.module').then(m => m.AppChartsModule)
 	},
-	{ path: 'sample', loadChildren:  './sample/sample.module#SampleModule' },
-  {path: 'bridge-pattern', loadChildren: './bridge-pattern/bridge-pattern.module#BrigdePatternModule'},
-  { path: 'timeline', loadChildren: './timeline/timeline.module#TimelineModule'},
+	{ path: 'sample', loadChildren: () => import('./sample/sample.module').then(m => m.SampleModule) },
+  {path: 'bridge-pattern', loadChildren: () => import('./bridge-pattern/bridge-pattern.module').then(m => m.BrigdePatternModule)},
+  { path: 'timeline', loadChildren: () => import('./timeline/timeline.module').then(m => m.TimelineModule)},
   { path: 'subscriptions', component: SubscriptionsComponent},
   { 
     path: 'ngrx-playground',

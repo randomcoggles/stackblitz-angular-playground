@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgxTuiCalendarComponent } from 'ngx-tui-calendar';
 import { BeforeCreateScheduleEvent } from 'ngx-tui-calendar/lib/Models/Events';
 import { Schedule } from 'ngx-tui-calendar/lib/Models/Schedule';
@@ -40,7 +40,7 @@ export class AppCalendarComponent implements OnInit {
         start: (new Date()),
         end: (new Date(Date.now() + 96000000)),
 				bgColor: 'red',
-				font
+				// font
       },
       {
         id: '2',
@@ -54,7 +54,7 @@ export class AppCalendarComponent implements OnInit {
     ]
   }
 
-  onTuiCalendarCreate($event) {
+  onTuiCalendarCreated($event) {
 		/* at this point the calendar has been created and it's methods are available via the ViewChild defined above, so for example you can do: */
 		this.calendar.createSchedules([
 			/* populated schedules array goes here*/
