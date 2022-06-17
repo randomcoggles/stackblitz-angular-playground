@@ -18,10 +18,10 @@ export const routes: Routes = [
 		component: NotFoundComponent
 	},
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
-	{
-		path: 'charts',
-		loadChildren: () => import('./charts/charts.module').then(m => m.AppChartsModule)
-	},
+	// {
+	// 	path: 'charts',
+	// 	loadChildren: () => import('./charts/charts.module').then(m => m.AppChartsModule)
+	// },
 	{ path: 'sample', loadChildren: () => import('./sample/sample.module').then(m => m.SampleModule) },
   {path: 'bridge-pattern', loadChildren: () => import('./bridge-pattern/bridge-pattern.module').then(m => m.BrigdePatternModule)},
   { path: 'timeline', loadChildren: () => import('./timeline/timeline.module').then(m => m.TimelineModule)},
