@@ -6,7 +6,7 @@ import { AbstractControl } from "@angular/forms";
   template: ` 
     <!-- {{control?.errors | json }} -->
 
-      <mat-hint align="start" *ngFor="let error of (errors ||{}) ">
+      <mat-hint align="start" *ngFor="let error of errors ">
         f - {{error.message}}
       </mat-hint>
     <!--
