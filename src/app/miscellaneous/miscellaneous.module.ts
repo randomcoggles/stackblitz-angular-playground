@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import { PrimeSpiralComponent } from './components/prime-spiral/prime-spiral.component';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule, NG_VALIDATORS, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
@@ -40,6 +40,10 @@ const routes: Route[] = [
 			{
 				path: 'angular-common-issues',
 				loadChildren: () => import('./components/angular-common-issues/angular-common-issues.module').then(m => m.AngularCommonIssuesModule)
+			},
+			{
+				path: 'content-projection',
+				loadChildren: () => import('./components/content-projection/content-projection.module').then(m => m.ContentProjectionModule)
 			}
 		],
 	},
