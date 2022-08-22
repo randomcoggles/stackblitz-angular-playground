@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, NG_VALIDATORS, ReactiveFormsModule } from '@angular/forms';
 import { AngularComponentsModule } from './shared/angular-components/angular-components.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppUISubscriptionComponent } from './core/ui/app-ui-subscription';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
@@ -27,18 +27,23 @@ import { AlgorithmsComponent } from './components/algorithms/algorithms.componen
 import { AppAlertModule } from './shared/components/app-alert/app-alert.module';
 import { AppAlertsComponent } from './components/alerts/alerts.component';
 import { SeIfOfflineModule } from './shared/components/se-if-offline.module';
-
 import { SidenavModule } from './shared/components/sidenav/sidenav.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // import { ThreeDCarrousselModule } from './components/simple-three-d-carroussel/three-d-carroussel.module';
 
 
 registerLocaleData(localePt, localePtExtra, localeEnExtra);
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 
 @NgModule({
-  imports:      [ 
+  imports: [
     CommonModule,
-	  BrowserAnimationsModule,
+    BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
     // ThreeDCarrousselModule,
@@ -49,13 +54,22 @@ registerLocaleData(localePt, localePtExtra, localeEnExtra);
     AppRoutingModule,
     AppAlertModule,
     SeIfOfflineModule,
-    SidenavModule
+    SidenavModule,
+    TranslateModule
+      .forRoot({
+        defaultLanguage: 'es', //Intl.DateTimeFormat().resolvedOptions().locale.split('-')[0] || 'en',
+        loader: {
+          provide: TranslateLoader,
+          useFactory: (createTranslateLoader),
+          deps: [HttpClient]
+        }
+      })
   ],
-  declarations: [ 
-    AppComponent, 
-    AppUISubscriptionComponent, 
-    HomeComponent, 
-    FloorPipe, 
+  declarations: [
+    AppComponent,
+    AppUISubscriptionComponent,
+    HomeComponent,
+    FloorPipe,
     PipesComponent,
     AppValidationsComponent,
     NotFoundComponent,
@@ -65,14 +79,14 @@ registerLocaleData(localePt, localePtExtra, localeEnExtra);
     AlgorithmsComponent,
     NotFoundComponent,
     AppAlertsComponent
-    ],
-  bootstrap:    [ AppComponent ],
+  ],
+  bootstrap: [AppComponent],
   providers: [
     UserService,
     // AppHttpSubscription,
-    { provide: LOCALE_ID, useValue: 'pt-BR'},
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: HTTP_INTERCEPTORS, useClass: MockInterceptor, multi: true },
-    {provide: NG_VALIDATORS, useExisting: CpfDirective, multi: true}
+    { provide: NG_VALIDATORS, useExisting: CpfDirective, multi: true }
   ]
 })
 export class AppModule { }
