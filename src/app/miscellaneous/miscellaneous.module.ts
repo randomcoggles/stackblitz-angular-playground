@@ -12,6 +12,7 @@ import { MiscellaneousComponent } from './miscellaneous.component';
 import { NgxGraphModule } from '@swimlane/ngx-graph';
 
 import { NgxGraphTestComponent } from './components/ngx-graph-test/ngx-graph-test.component';
+import { LoadIframeComponent } from './components/load-iframe/load-iframe.component';
 
 
 const routes: Route[] = [
@@ -31,6 +32,10 @@ const routes: Route[] = [
 			{
 				path: 'prime-spiral',
 				component: PrimeSpiralComponent,
+			},			
+			{
+				path: 'load-iframe',
+				component: LoadIframeComponent,
 			},
 			{
 				path: 'custom-pipes',
@@ -40,6 +45,10 @@ const routes: Route[] = [
 			{
 				path: 'angular-common-issues',
 				loadChildren: () => import('./components/angular-common-issues/angular-common-issues.module').then(m => m.AngularCommonIssuesModule)
+			},
+			{
+				path: 'content-projection',
+				loadChildren: () => import('./components/content-projection/content-projection.module').then(m => m.ContentProjectionModule)
 			},
 			{
 				path: 'content-projection',
@@ -62,7 +71,7 @@ const routes: Route[] = [
 		MatInputModule,
     MatListModule
 	],
-	declarations: [MiscellaneousComponent, PrimeSpiralComponent, NgxGraphTestComponent],
+	declarations: [MiscellaneousComponent, PrimeSpiralComponent, NgxGraphTestComponent, LoadIframeComponent],
 })
 export class MiscellaneousModule {}
 
