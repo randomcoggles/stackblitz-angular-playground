@@ -23,7 +23,7 @@ export class ThreeDCarrousselComponent
   @Input() data;
   @Input() depth = 180;
   @Input() speed = "8s";
-  @Input() perspectiveOrigin = "50% -225px";
+  @Input() perspectiveOrigin = "50% -113.5%";// "50% -225px";
   showController = false;
   
   manualPerspectiveOrigin = '';

@@ -30,7 +30,7 @@ import { SeIfOfflineModule } from './shared/components/se-if-offline.module';
 import { SidenavModule } from './shared/components/sidenav/sidenav.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-// import { ThreeDCarrousselModule } from './components/simple-three-d-carroussel/three-d-carroussel.module';
+import { ThreeDCarrousselModule } from './components/simple-three-d-carroussel/three-d-carroussel.module';
 
 
 registerLocaleData(localePt, localePtExtra, localeEnExtra);
@@ -46,7 +46,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
-    // ThreeDCarrousselModule,
+    ThreeDCarrousselModule,
     FormsModule,
     ReactiveFormsModule,
     AngularComponentsModule,
