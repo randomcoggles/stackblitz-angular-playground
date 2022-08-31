@@ -6,7 +6,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: 'sidenav.component.html'
 })
 export class SidenavComponent {
-	mode = new FormControl('side');
+	mode = new FormControl('side') as any;
 	opened: boolean = true;
   constructor(
     //public readonly sidenavService: SidenavService 
