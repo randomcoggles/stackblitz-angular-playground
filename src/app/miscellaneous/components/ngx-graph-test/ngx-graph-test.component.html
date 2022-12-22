@@ -1,5 +1,6 @@
 <ngx-graph
-  [draggingEnabled]="false"
+  [draggingEnabled]="true"
+  [showMiniMap]="true"
   class="chart-container"
   [view]="[800, 550]"
   [links]="links"
@@ -33,13 +34,18 @@
         [attr.height]="cluster.dimension.height"
         [attr.fill]="cluster.data.color"
       />
+      
+      <svg:text class="cluster-title" alignment-baseline="central" [attr.x]="(cluster.dimension.width / 2 ) - 30" [attr.y]="20">
+       {{cluster.label}}
+      </svg:text>
+      
     </svg:g>
   </ng-template>
 
   <ng-template #nodeTemplate let-node>
     <svg:g class="node" *ngIf="node.type === 'dataset'">
       <svg:rect
-        class="dataset-chape"
+        class="dataset-shape"
         rx="8"
         [attr.strokeWidth]="3"
         [attr.stroke]="'blue'"
