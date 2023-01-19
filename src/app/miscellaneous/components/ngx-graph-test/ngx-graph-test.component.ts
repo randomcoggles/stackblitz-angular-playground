@@ -7,6 +7,7 @@ import { curveLinear } from 'd3-shape';
 	styleUrls: ['./ngx-graph-test.component.scss'],
 })
 export class NgxGraphTestComponent implements OnInit {
+	
   links = [
     {
       id: 'a',

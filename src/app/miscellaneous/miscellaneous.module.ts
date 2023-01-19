@@ -12,6 +12,7 @@ import { MiscellaneousComponent } from './miscellaneous.component';
 import { NgxGraphModule } from '@swimlane/ngx-graph';
 
 import { NgxGraphTestComponent } from './components/ngx-graph-test/ngx-graph-test.component';
+import { GraphCustomComponent } from './components/ngx-graph-test/custom-node.component';
 
 
 const routes: Route[] = [
@@ -62,7 +63,7 @@ const routes: Route[] = [
 		MatInputModule,
     MatListModule
 	],
-	declarations: [MiscellaneousComponent, PrimeSpiralComponent, NgxGraphTestComponent],
+	declarations: [MiscellaneousComponent, PrimeSpiralComponent, NgxGraphTestComponent, GraphCustomComponent],
 })
 export class MiscellaneousModule {}
 

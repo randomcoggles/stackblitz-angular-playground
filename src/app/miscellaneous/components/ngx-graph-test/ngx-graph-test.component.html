@@ -20,6 +20,15 @@
   layout="dagreCluster"
 >
   <ng-template #defsTemplate>
+  <svg:g>
+    <svg:g *ngFor="let node of nodes">
+    <foreignObject x="0" y="0" width="100" height="100">
+      <div style="position: fixed; font-size: 10px;box-shadow: 2px 2px 12px 1px #343434;" xmlns="http://www.w3.org/1999/xhtml">
+        <p class="red d-icon-sort">{{node | json}}</p>
+      </div>
+    </foreignObject>  
+    </svg:g>
+  </svg:g>
     <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
       <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
     </svg:marker>
@@ -43,44 +52,7 @@
   </ng-template>
 
   <ng-template #nodeTemplate let-node>
-    <svg:g class="node" *ngIf="node.type === 'dataset'">
-      <svg:rect
-        class="dataset-shape"
-        rx="8"
-        [attr.strokeWidth]="3"
-        [attr.stroke]="'blue'"
-        [attr.width]="node.dimension.width + 20"
-        [attr.height]="node.dimension.height + 10"
-        [attr.fill]="node.data.color"
-      />
-
-      <svg:text class="title" alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2 -10">
-       {{node.label}}
-      </svg:text> 
-      <svg:text class="ds-sub" alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2 + 10">
-       Dataset
-      </svg:text>
-      
-      <svg:text class="ds-sub" alignment-baseline="central" [attr.x]="40" [attr.y]="node.dimension.height / 2 + 10">
-       
-      </svg:text> 
-      <!-- <text x="140" [attr.y]="node.dimension.height / 2 - 25" style="font-family: FontAwesome" >&#xf0ce; </text> -->
-            
-    </svg:g>
-
-    <svg:g *ngIf="node.type === 'sqlArtifact'">
-      <svg:circle stroke="brown" cx="50" fill="#fff" [attr.cy]="node.dimension.height / 2" r="60"/>
-      <text x="40" [attr.y]="node.dimension.height / 2 - 25" style="font-family: FontAwesome" >&#xf121; </text>
-      
-      
-      <svg:text alignment-baseline="central" width="50" [attr.x]="10" [attr.y]="node.dimension.height / 2">
-       {{node.label}}
-      </svg:text>
-      <svg:text class="ds-sub" alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2 + 20">
-       SQL Artifact
-      </svg:text>
-    </svg:g>
-    
+    <svg:g graphCustomNode [node]="node"></svg:g>
   </ng-template>
 
   <ng-template #linkTemplate let-link>
