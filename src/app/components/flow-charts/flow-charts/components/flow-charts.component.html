@@ -1,0 +1,140 @@
+<div class="d-flex">
+    <div class="left-panel">
+        
+        <h2>Configuration</h2>
+        <form class="settings">
+            <mat-form-field>
+                <mat-select placeholder="Layout" [ngModel]="layout" (ngModelChange)="setLayout($event)"
+                    name="layout">
+                    <mat-option *ngFor="let l of layouts" [value]="l.value">
+                        {{l.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-select placeholder="Line Curve Interpolation" [ngModel]="curveType"
+                    (ngModelChange)="setInterpolationType($event)" name="curve">
+                    <mat-option *ngFor="let curveType of interpolationTypes" [value]="curveType">
+                        {{curveType}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-checkbox [(ngModel)]="draggingEnabled" name="draggingEnabled">Enable Dragging</mat-checkbox>
+            <mat-checkbox [(ngModel)]="panningEnabled" name="panningEnabled">Enable Panning</mat-checkbox>
+            <mat-checkbox [(ngModel)]="zoomEnabled" name="zoonEnabled">Enable Zoom</mat-checkbox>
+
+            <mat-form-field>
+                <input matInput type="number" [(ngModel)]="zoomSpeed" name="zoomSpeed" placeholder="Zoom speed"
+                    step="0.1">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="number" [(ngModel)]="minZoomLevel" name="minZoomLevel"
+                    placeholder="Min Zoom Level" min="0" [max]="maxZoomLevel" step="0.1">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="number" [(ngModel)]="maxZoomLevel" name="maxZoomLevel"
+                    placeholder="Max Zoom Level" [min]="minZoomLevel" step="0.1">
+            </mat-form-field>
+
+            <mat-checkbox [(ngModel)]="panOnZoom" name="panOnZoom">Pan while zooming</mat-checkbox>
+
+            <mat-checkbox [(ngModel)]="autoZoom" name="autoZoom">Auto Zoom </mat-checkbox>
+
+            <mat-checkbox [(ngModel)]="autoCenter" name="autoCenter">Auto Center </mat-checkbox>
+        </form>
+
+        <button mat-stroked-button color="primary" class="button" (click)="update$.next(true)">Update</button>
+        <button mat-stroked-button color="primary" class="button" (click)="center$.next(true)">Center</button>
+        <button mat-stroked-button color="primary" class="button" (click)="zoomToFit$.next(true)">Zoom to
+            fit</button>
+    </div>
+    <div class="right-panel">
+        
+        <div class="page">
+            <ngx-graph [links]="links" [nodes]="nodes"  [layout]="layout" [curve]="curve"
+                [draggingEnabled]="draggingEnabled" [panningEnabled]="panningEnabled" [enableZoom]="zoomEnabled"
+                [zoomSpeed]="zoomSpeed" [minZoomLevel]="minZoomLevel" [maxZoomLevel]="maxZoomLevel"
+                [panOnZoom]="panOnZoom" [autoZoom]="autoZoom" [autoCenter]="autoCenter" [update$]="update$"
+                [layoutSettings]="layoutSettings"
+                [animate]="true" [center$]="center$" [zoomToFit$]="zoomToFit$" (clickHandler)="nodeClicked($event)">
+
+                <ng-template #defsTemplate>
+                    <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4"
+                        orient="auto">
+                        <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+                    </svg:marker>
+                </ng-template>
+
+                <!-- <ng-template #clusterTemplate let-cluster>
+                    <svg:g class="node cluster">
+                        <svg:rect rx="5" ry="5" [attr.width]="cluster.dimension.width"
+                            [attr.height]="cluster.dimension.height" [attr.fill]="cluster.data.color" />
+                    </svg:g>
+                </ng-template> -->
+
+                <ng-template #nodeTemplate let-node>
+                    <svg:g class="node" width="320">
+                        <!-- <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height"
+                            [attr.fill]="node.data.color" />
+                        <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2">
+                            {{node.label}}</svg:text>
+                            x="20" y="20" width="160" height="100"
+                         -->
+                        <foreignObject width="320" height="180">
+                            <div class="panel" xmlns="http://www.w3.org/1999/xhtml">
+                                <h4>{{node.label}}</h4>
+                                <p class="p-0" class="red d-icon-sort">{{node.meta?.description}}</p>
+                                <p class="p-0">
+
+                                    <button mat-icon-button color="primary" (click)="addNode($event, node)"
+                                        aria-label="Add a new node">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+
+                                    <button mat-icon-button color="primary" aria-label="Add a new node">
+                                        <mat-icon>expand_more</mat-icon>
+                                    </button>
+                                    <button mat-icon-button color="primary" aria-label="Add a new node">
+                                        <mat-icon>expand_less</mat-icon>
+                                    </button>
+
+                                    <button mat-icon-button color="primary" (click)="removeNode($event, node)"
+                                        aria-label="Add a new node">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </p>
+                            </div>
+                        </foreignObject>
+                    </svg:g>
+                </ng-template>
+
+                <ng-template #linkTemplate let-link>
+                    <svg:g class="edge">
+                        <svg:path class="line" stroke-width="2" marker-end="url(#arrow)">
+                        </svg:path>
+                        <svg:text class="edge-label" text-anchor="middle">
+                            <textPath class="text-path" [attr.href]="'#' + link.id"
+                                [style.dominant-baseline]="link.dominantBaseline" startOffset="50%">
+                                {{link.label}}
+                            </textPath>
+                        </svg:text>
+                    </svg:g>
+                </ng-template>
+            </ngx-graph>
+        </div>
+    </div>
+    <!-- <mat-drawer-container class="flow-chart-container">
+        <mat-drawer mode="side" opened class="sidebar">
+        </mat-drawer>
+
+        <mat-drawer-content>
+
+        </mat-drawer-content>
+    </mat-drawer-container> -->
+
+
+</div>

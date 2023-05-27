@@ -38,10 +38,15 @@ export const routes: Routes = [
     path: 'chrome-new-features',
     loadChildren: () => import('./chrome-new-features/chrome-new-features.module').then(m => m.ChromeNewFeaturesModule)
   },
-	{
-		path: 'alerts',
-		component: AppAlertsComponent
-	},
+  {
+	  path: 'alerts',
+	  component: AppAlertsComponent
+  },
+  {
+	  path: 'flow-charts',
+	  loadChildren: () => import('./components/flow-charts/flow-charts/components/flow-charts.module').then(m => m.FlowChartsModule)
+  },
+	
 	{
 		path: 'dialogs',
 		loadChildren: () => import('./components/dialogs/dialogs.module').then(m => m.DialogsModule)

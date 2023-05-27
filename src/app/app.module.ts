@@ -44,7 +44,7 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    BrowserModule,
+    // BrowserModule,
     HttpClientModule,
     ThreeDCarrousselModule,
     FormsModule,

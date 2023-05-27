@@ -13,7 +13,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatOptionModule } from '@angular/material/core';
+
+import { MatSelectModule } from "@angular/material/select";
 
 const modules = [
 	CommonModule,
@@ -29,8 +32,10 @@ const modules = [
 	MatProgressSpinnerModule,
 	MatRadioModule,
 	MatCardModule,
-  MatProgressBarModule,
-  MatCardModule
+	MatProgressBarModule,
+	MatCardModule,
+	MatOptionModule,
+	MatSelectModule
 ];
 
 @NgModule({
@@ -38,4 +43,4 @@ const modules = [
 	exports: [...modules],
 	declarations: [],
 })
-export class AngularComponentsModule {}
+export class AngularComponentsModule { }
