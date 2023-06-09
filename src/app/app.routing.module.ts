@@ -81,6 +81,11 @@ export const routes: Routes = [
 		loadChildren: () => import('./miscellaneous/miscellaneous.module')
 		.then(m => m.MiscellaneousModule)
 	},
+	{
+		path: 'threejs-examples',
+		loadChildren: () => import('./threejs-examples/threejs-examples.module')
+		.then(m => m.ThreejsExamplesModule)
+	},
 	{ path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 	
 ];
