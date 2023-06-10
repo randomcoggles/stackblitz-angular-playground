@@ -1,0 +1,19 @@
+<h1>Hello D3ForceGraph!</h1>
+ -- {{centerX}} - {{centerY}} --
+ <hr>
+
+<svg #canvas width="960" height="960">
+    <!-- <svg:svg class="ngx-charts" [attr.width]="850" [attr.height]="450" *ngIf="simulation?.nodes?.length">
+        <svg:g class="nodes">
+            <svg:g #nodeElement 
+                *ngFor="let node of nodes$ | async; trackBy: trackById" 
+                class="node-group"
+                [id]="node.id" 
+                [attr.transform]="node.transform">
+                <svg:circle r="10" [attr.cx]="node.dimension?.width / 2"
+                    [attr.cy]="node.dimension?.height / 2" [attr.fill]="node.data?.color" />
+            </svg:g>
+        </svg:g>
+    </svg:svg> -->
+</svg>
+{{simulation?.nodes()| json}}

@@ -1,10 +1,14 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
 import { ThreejsExamplesComponent } from "./threejs-examples.component";
+import { FoldersExampleComponent } from "./folders-example.component";
 
 
 const routes: Routes = [
-	{ path: '', component: ThreejsExamplesComponent },
+    { path: '', component: FoldersExampleComponent },
+    {
+        path: 'folders-example', component: FoldersExampleComponent
+    }
 ];
 
 @NgModule({

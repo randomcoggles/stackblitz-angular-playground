@@ -14,20 +14,11 @@ export interface GraphResult {
     children?: GraphNode[]
     childrenIds?: string[]
     show?: boolean
-    width?: number
-    height?: number
-    x?: number
-    y?: number
-    z?: number
-    fx?: number
-    fy?: number
-    fz?: number
   }
   
   
   export interface Link {
-    source: number | string
-    target: number | string
+    source: number | string | GraphNode
+    target: number | string | GraphNode
     show?: boolean
-    gType?: string
   }

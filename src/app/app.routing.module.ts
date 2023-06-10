@@ -86,6 +86,13 @@ export const routes: Routes = [
 		loadChildren: () => import('./threejs-examples/threejs-examples.module')
 		.then(m => m.ThreejsExamplesModule)
 	},
+	{
+		path: 'd3-force-graph',
+		loadChildren: () => import('./charts/components/d3-force-graph/d3-force-graph.module')
+		.then(m => m.D3ForceGraphModule)
+	},
+	
+	
 	{ path: '**', redirectTo: 'not-found', pathMatch: 'full' },
 	
 ];

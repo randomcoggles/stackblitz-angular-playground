@@ -15,7 +15,9 @@ export class ThreejsExamplesComponent implements AfterViewInit {
   @ViewChild('canvas') canvas: ElementRef = {} as any;
   graphData: GraphResult = graphData;
   currentGraphData: GraphResult = graphData;
+
   ngAfterViewInit() {
+    debugger;
     const geometries = [
       new THREE.BoxGeometry(Math.random() * 20, Math.random() * 20, Math.random() * 20),
       new THREE.ConeGeometry(Math.random() * 10, Math.random() * 20),
@@ -90,15 +92,8 @@ export class ThreejsExamplesComponent implements AfterViewInit {
       controlType: "orbit",
     });
     const leGrap = myGraph(this.canvas?.nativeElement || {});
-      // .linkWidth(5)
-      // const tree = getPrunedTree();
-      // console.log('Tree:\t', tree);
       leGrap.graphData(this.graphData)
       .linkDirectionalParticles(15)
-      // .nodeColor((node: any) => { 
-      //   return !node.childLinks?.length ? 'green' : node.collapsed ? 'red' : 'yellow';
-      // })
-      // .onNodeHover((node: any) =>{ return this.canvas?.nativeElement.style.cursor = node && node.childLinks.length ? 'pointer' : null; })
       .onNodeClick((node: any) => {
 
         if (node.type === 'folder') {
@@ -195,37 +190,15 @@ export class ThreejsExamplesComponent implements AfterViewInit {
         text['position'].set(0, 0, 20);
         group.add(text);
         group.add(obj);
+        group.position.z = 50;
+        console.log('group.position:\t', group.position);
         return group;
       })
-      
-      // .linkThreeObject(link => {
-      //   // 2 (nodes) x 3 (r+g+b) bytes between [0, 1]
-      //   // For example:
-      //   // new Float32Array([
-      //   //   1, 0, 0,  // source node: red
-      //   //   0, 1, 0   // target node: green
-      //   // ]);
-      //   // const colors = new Float32Array([].concat(
-      //   //   ...[link.source, link.target]
-      //   //     .map(nodeColorScale)
-      //   //     .map(d3.color)
-      //   //     .map(({ r, g, b }) => [r, g, b].map(v => v / 255)
-      //   //   )));
-
-      //   const material = new THREE.LineBasicMaterial({ vertexColors: true });
-      //   const geometry = new THREE.BufferGeometry();
-      //   geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(2 * 3), 3));
-      //   geometry.setAttribute('color', 
-      //     // new THREE.BufferAttribute(colors, 3)
-      //     'violet'
-      //   );
-
-      //   return new THREE.Line(geometry, material);
-      // })
-      // .graphData(this.graphData)
+      .linkDirectionalArrowLength(6.5)
+      .linkDirectionalArrowRelPos(1)
       .linkDirectionalParticles(2)
       .d3Force('link')
-      .distance(link => 100);
+      .distance(link => 100)
   }
 
 }
